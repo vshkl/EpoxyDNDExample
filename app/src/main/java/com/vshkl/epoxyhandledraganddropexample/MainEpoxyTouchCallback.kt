@@ -27,15 +27,15 @@ class MainEpoxyTouchCallback(
         x: Int,
         y: Int
     ) {
-        val movingItem = viewHolder?.model
+        val movingRowId = viewHolder?.model
             ?.takeIf { it is RowEpoxyModel_ }
             ?.let { (it as RowEpoxyModel_).rowId }
-        val shiftingItem = target?.model
+        val shiftingRowId = target?.model
             ?.takeIf { it is RowEpoxyModel_ }
             ?.let { (it as RowEpoxyModel_).rowId }
 
-        if (movingItem != null && shiftingItem != null) {
-            listener.onMoved(movingItem, shiftingItem)
+        if (movingRowId != null && shiftingRowId != null) {
+            listener.onMoved(movingRowId, shiftingRowId)
         }
 
         super.onMoved(recyclerView, viewHolder, fromPos, target, toPos, x, y)
