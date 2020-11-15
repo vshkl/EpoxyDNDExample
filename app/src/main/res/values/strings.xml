@@ -1,3 +1,8 @@
 <resources>
+
     <string name="app_name">Epoxy DND Example</string>
+
+    <string name="txt_header_one">Header One</string>
+    <string name="txt_header_two">Header Two</string>
+
 </resources>

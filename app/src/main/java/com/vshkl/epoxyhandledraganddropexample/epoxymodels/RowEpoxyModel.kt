@@ -12,10 +12,11 @@ import com.vshkl.epoxyhandledraganddropexample.R
 import com.vshkl.epoxyhandledraganddropexample.epoxymodels.RowEpoxyModel.RowViewHolder
 import com.vshkl.epoxyhandledraganddropexample.helpers.KotlinEpoxyHolder
 
-@EpoxyModelClass(layout = R.layout.item_model_header)
+@EpoxyModelClass(layout = R.layout.item_model_row)
 abstract class RowEpoxyModel : EpoxyModelWithHolder<RowViewHolder>() {
 
-    @EpoxyAttribute var title = ""
+    @EpoxyAttribute lateinit var rowId: String
+    @EpoxyAttribute lateinit var title: String
     @EpoxyAttribute(DoNotHash) var onDragHandleTouchListener: OnTouchListener? = null
 
     @SuppressLint("ClickableViewAccessibility")
