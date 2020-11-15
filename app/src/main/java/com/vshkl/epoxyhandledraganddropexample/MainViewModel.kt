@@ -18,7 +18,7 @@ class MainViewModel : ViewModel() {
     }
 
     init {
-        rowsData.value = MutableList(10) { Row(id = UUID.randomUUID().toString(), title = "Row #$it") }
+        rowsData.value = MutableList(10) { Row(id = UUID.randomUUID().toString(), title = "Row #${it + 1}") }
     }
 
     fun moveRow(movingRowId: String, shiftingRowId: String) {
